@@ -1,0 +1,56 @@
+# ninja log v5
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_method_response.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_plugin_registrar.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_method_codec.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/build/linux/x64/debug/flutter/_phony_	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_method_channel.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_json_message_codec.h	caaecfb2b188f2cc
+42266	45814	1756735003952164130	intermediates_do_not_run/flutter_application_1	5660f9dfdc059de9
+45814	48346	0	CMakeFiles/install.util	67c117565b1fb42
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_json_method_codec.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_method_call.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_binary_messenger.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_message_codec.h	caaecfb2b188f2cc
+32042	42266	1756735000383702772	CMakeFiles/flutter_application_1.dir/my_application.cc.o	2ae4da3bdc1fc7dc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_engine.h	caaecfb2b188f2cc
+554	32007	0	flutter/_phony_	caaecfb2b188f2cc
+29576	30832	1756693029002183940	CMakeFiles/flutter_application_1.dir/main.cc.o	5e29233e83520531
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_string_codec.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_view.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_standard_message_codec.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_basic_message_channel.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_plugin_registry.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/libflutter_linux_gtk.so	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_value.h	caaecfb2b188f2cc
+32043	42008	1756734999977797046	CMakeFiles/flutter_application_1.dir/flutter/generated_plugin_registrant.cc.o	a48922e5b4b99713
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_binary_codec.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_dart_project.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/flutter_linux.h	caaecfb2b188f2cc
+554	32007	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_standard_method_codec.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/libflutter_linux_gtk.so	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_basic_message_channel.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_binary_codec.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_binary_messenger.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_dart_project.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_engine.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_json_message_codec.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_json_method_codec.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_message_codec.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_method_call.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_method_channel.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_method_codec.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_method_response.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_plugin_registrar.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_plugin_registry.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_standard_message_codec.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_standard_method_codec.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_string_codec.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_value.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/fl_view.h	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/linux/flutter/ephemeral/flutter_linux/flutter_linux.h	caaecfb2b188f2cc
+8	13520	0	flutter/_phony_	caaecfb2b188f2cc
+8	13520	0	/home/laryssa/Área de trabalho/projetos/flutter_application_1/build/linux/x64/debug/flutter/_phony_	caaecfb2b188f2cc
+13522	17014	1756746306855455702	CMakeFiles/flutter_application_1.dir/flutter/generated_plugin_registrant.cc.o	a48922e5b4b99713
+13521	17443	1756746307069450807	CMakeFiles/flutter_application_1.dir/my_application.cc.o	2ae4da3bdc1fc7dc
+17443	18207	1756746308055428285	intermediates_do_not_run/flutter_application_1	5660f9dfdc059de9
+18207	18506	0	CMakeFiles/install.util	67c117565b1fb42

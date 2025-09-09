@@ -1,0 +1,1 @@
+ /home/laryssa/Área\ de\ trabalho/projetos/flutter_application_1/.dart_tool/flutter_build/57071678b138e09b9be18391179bd87d/native_assets.yaml: 
