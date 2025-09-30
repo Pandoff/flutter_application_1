@@ -1,11 +1,12 @@
 name: flutter_application1
 description: "Aluga Aí - App de aluguel com chat"
-publish_to: 'none'
+
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -22,3 +23,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/casas/
