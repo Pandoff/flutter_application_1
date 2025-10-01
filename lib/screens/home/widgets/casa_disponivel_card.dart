@@ -11,6 +11,19 @@ class CasaDisponivelCard extends StatelessWidget {
     required this.onToggleFavorita,
   });
 
+static const Map<String, String> _imagensCasas = {
+  '1': 'assets/casas/casa1.jpeg',
+  '2': 'assets/casas/casa2.jpeg',
+  '3': 'assets/casas/casa3.jpeg',
+  '4': 'assets/casas/casa4.jpeg',
+  '5': 'assets/casas/casa5.jpeg',
+  '6': 'assets/casas/casa6.jpeg',
+};
+
+String _getImagemCasa(String casaId) {
+  return _imagensCasas[casaId] ?? 'assets/casas/casa1.jpeg';
+}
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,10 +41,11 @@ class CasaDisponivelCard extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min, // É PRA EVITAR OVERFLOW
         children: [
           // Imagem da casa
           Container(
-            height: 100,
+            height: 120,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.only(
@@ -39,7 +53,7 @@ class CasaDisponivelCard extends StatelessWidget {
                 topRight: Radius.circular(12),
               ),
               image: DecorationImage(
-                image: AssetImage(casa.imagemUrl),
+                image: AssetImage(_getImagemCasa(casa.id)),
                 fit: BoxFit.cover,
               ),
             ),
@@ -71,9 +85,10 @@ class CasaDisponivelCard extends StatelessWidget {
           ),
           // Informações da casa
           Padding(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'R\$${casa.preco.toInt()}/mês',

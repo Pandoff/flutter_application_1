@@ -1,0 +1,1 @@
+ /home/laryce/projetos/flutter_application_1/.dart_tool/flutter_build/39af73b56f9d6cbee187fd3154cfb1d9/dart_build_result.json: 
