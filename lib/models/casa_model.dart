@@ -1,39 +1,47 @@
 class Casa {
   final String id;
   final String titulo;
-  final String endereco;
+  final String descricao;
   final double preco;
+  final String endereco;
   final String imagemUrl;
-  final bool isFavorita;
   final bool isDestaque;
+  final bool isFavorita;
 
   Casa({
     required this.id,
     required this.titulo,
-    required this.endereco,
+    required this.descricao,
     required this.preco,
+    required this.endereco,
     required this.imagemUrl,
-    this.isFavorita = false,
     this.isDestaque = false,
+    this.isFavorita = false,
   });
 
-  Casa copyWith({
-    String? id,
-    String? titulo,
-    String? endereco,
-    double? preco,
-    String? imagemUrl,
-    bool? isFavorita,
-    bool? isDestaque,
-  }) {
+  factory Casa.fromJson(Map<String, dynamic> json) {
     return Casa(
-      id: id ?? this.id,
-      titulo: titulo ?? this.titulo,
-      endereco: endereco ?? this.endereco,
-      preco: preco ?? this.preco,
-      imagemUrl: imagemUrl ?? this.imagemUrl,
-      isFavorita: isFavorita ?? this.isFavorita,
-      isDestaque: isDestaque ?? this.isDestaque,
+      id: json['id'].toString(),
+      titulo: json['titulo'] ?? '',
+      descricao: json['descricao'] ?? '',
+      preco: (json['preco'] ?? 0).toDouble(),
+      endereco: json['endereco'] ?? '',
+      imagemUrl: json['imagem_url'] ?? '',
+      isDestaque: json['is_destaque'] ?? false,
+      isFavorita: json['is_favorita'] ?? false,
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'titulo': titulo,
+      'descricao': descricao,
+      'preco': preco,
+      'endereco': endereco,
+      'imagem_url': imagemUrl,
+      'is_destaque': isDestaque,
+      'is_favorita': isFavorita,
+    };
   }
 }

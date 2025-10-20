@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../home/home_screen.dart';
+import 'package:provider/provider.dart';
+import '../../../providers/auth_provider.dart';
+import '../../home/home_locatario_screen.dart';
+import '../../home/home_locador_screen.dart';
+import '../../../services/usuario_service.dart';
 
 class CadastroScreen extends StatefulWidget {
   final VoidCallback onToggleScreen;
@@ -14,19 +18,55 @@ class CadastroScreen extends StatefulWidget {
 }
 
 class _CadastroScreenState extends State<CadastroScreen> {
-  bool aceitouTermos = false;
+  void _fazerCadastro(BuildContext context) async {
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
 
-  void _fazerCadastro(BuildContext context) {
-    // Aqui você pode adicionar a lógica de cadastro
-    // Por enquanto, vamos apenas navegar para a Home
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()),
-    );
+    if (authProvider.authData.isCadastroValid) {
+      try {
+        // 🔹 Salva localmente o novo usuário
+        await UsuarioService.salvarUsuario(authProvider.authData);
+
+        // 🔹 Marca como logado (opcional)
+        authProvider.cadastrar(authProvider.authData.tipoUsuario);
+
+        // 🔹 Mostra mensagem de sucesso
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Usuário cadastrado com sucesso!'),
+            backgroundColor: Colors.green,
+          ),
+        );
+
+        // 🔹 Redireciona conforme o tipo de usuário
+        if (authProvider.authData.tipoUsuario == 'Locador') {
+          Navigator.pushReplacementNamed(context, '/home_locador');
+        } else {
+          Navigator.pushReplacementNamed(context, '/home_locatario');
+        }
+
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Erro: ${e.toString()}'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Por favor, preencha todos os campos corretamente'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
+
 
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context);
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(82, 115, 209, 1),
       appBar: AppBar(
@@ -118,6 +158,9 @@ class _CadastroScreenState extends State<CadastroScreen> {
                 ),
               ),
               style: TextStyle(color: Colors.grey[600]),
+              onChanged: (value) {
+                authProvider.updateNome(value);
+              },
             ),
 
             const SizedBox(height: 16),
@@ -155,6 +198,9 @@ class _CadastroScreenState extends State<CadastroScreen> {
                 ),
               ),
               style: TextStyle(color: Colors.grey[600]),
+              onChanged: (value) {
+                authProvider.updateEmail(value);
+              },
             ),
 
             const SizedBox(height: 16),
@@ -192,6 +238,9 @@ class _CadastroScreenState extends State<CadastroScreen> {
                 ),
               ),
               style: TextStyle(color: Colors.grey[600]),
+              onChanged: (value) {
+                authProvider.updateTelefone(value);
+              },
             ),
 
             const SizedBox(height: 16),
@@ -229,6 +278,9 @@ class _CadastroScreenState extends State<CadastroScreen> {
                 ),
               ),
               style: TextStyle(color: Colors.grey[600]),
+              onChanged: (value) {
+                authProvider.updateSenha(value);
+              },
             ),
 
             const SizedBox(height: 16),
@@ -266,6 +318,9 @@ class _CadastroScreenState extends State<CadastroScreen> {
                 ),
               ),
               style: TextStyle(color: Colors.grey[600]),
+              onChanged: (value) {
+                authProvider.updateConfirmarSenha(value);
+              },
             ),
 
             const SizedBox(height: 16),
@@ -274,11 +329,9 @@ class _CadastroScreenState extends State<CadastroScreen> {
             Row(
               children: [
                 Checkbox(
-                  value: aceitouTermos,
+                  value: authProvider.authData.aceitouTermos,
                   onChanged: (value) {
-                    setState(() {
-                      aceitouTermos = value ?? false;
-                    });
+                    authProvider.updateAceitouTermos(value ?? false);
                   },
                   fillColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
@@ -298,18 +351,46 @@ class _CadastroScreenState extends State<CadastroScreen> {
             ),
 
             const SizedBox(height: 24),
+            
+            // Tipo de usuário
+            const Text(
+              'Você é:',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 8),
+
+            DropdownButtonFormField<String>(
+              value: authProvider.authData.tipoUsuario,
+              decoration: InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              items: const [
+                DropdownMenuItem(value: 'Locador', child: Text('Locador')),
+                DropdownMenuItem(value: 'Locatário', child: Text('Locatário')),
+              ],
+              onChanged: (value) {
+                authProvider.updateTipoUsuario(value ?? 'Locatário');
+              },
+            ),
+            const SizedBox(height: 16),
 
             // Botão de Cadastrar (condicional)
             ElevatedButton(
-              onPressed: aceitouTermos
+              onPressed: authProvider.authData.isCadastroValid
                   ? () {
-                      // Lógica de cadastro aqui
                       _fazerCadastro(context);
-                      //print('Cadastro realizado!');
                     }
                   : null,
               style: ElevatedButton.styleFrom(
-                backgroundColor: aceitouTermos
+                backgroundColor: authProvider.authData.isCadastroValid
                     ? const Color.fromRGBO(96, 165, 250, 1)
                     : Colors.grey[400],
                 foregroundColor: Colors.white,

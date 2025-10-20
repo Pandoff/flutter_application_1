@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../home/home_screen.dart';
+import 'package:provider/provider.dart';
+import '../../../providers/auth_provider.dart';
+import '../../home/home_locador_screen.dart';
+import '../../home/home_locatario_screen.dart';
 import 'cadastro_screen.dart';
 
 // aqui antes das classes as variáveis têm que ser iniciadas
@@ -13,16 +16,36 @@ class LoginScreen extends StatelessWidget {
   });
 
   void _fazerLogin(BuildContext context) {
-    // Aqui você pode adicionar a lógica de autenticação
-    // Por enquanto, vamos apenas navegar para a Home
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()),
-    );
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+
+    if (authProvider.authData.isLoginValid) {
+      authProvider.login();
+
+      if (authProvider.authData.tipoUsuario == 'Locador') {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeLocadorScreen()),
+        );
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeLocatarioScreen()),
+        );
+      }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Por favor, preencha todos os campos'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context);
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(82, 115, 209, 1),
       body: SingleChildScrollView(
